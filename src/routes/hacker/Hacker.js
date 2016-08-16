@@ -60,13 +60,11 @@ const HackerNews = React.createClass({
         });
       });
     });
-
   },
 
   render: function () {
     const { items } = this.props;
     this.context.setTitle(title);
-    console.log(items);
     return (
       <div className={s.root}>
         <div className={s.banner}>
