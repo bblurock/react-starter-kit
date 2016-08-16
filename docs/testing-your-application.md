@@ -29,7 +29,7 @@ npm test
 
 - test filenames MUST end with `test.js` or `npm test` will not be able to detect them
 - test filenames SHOULD be named after the related component (e.g. create `Login.test.js` for
-`Login.js` component)
+`Hacker.js` component)
 
 ### Basic example
 

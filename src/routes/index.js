@@ -17,6 +17,7 @@ import login from './login';
 import register from './register';
 import content from './content';
 import error from './error';
+import hacker from './hacker';
 
 export default {
 
@@ -28,6 +29,7 @@ export default {
     contact,
     login,
     register,
+    hacker,
 
     // place new routes before...
     content,

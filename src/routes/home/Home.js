@@ -17,6 +17,11 @@ function Home({ news }, context) {
   context.setTitle(title);
   return (
     <div className={s.root}>
+      <div className={s.banner}>
+        <h1 className={s.bannerTitle}>React</h1>
+        <p className={s.bannerDesc}>Complex web apps made easy</p>
+      </div>
+
       <div className={s.container}>
         <h1 className={s.title}>React.js News</h1>
         <ul className={s.news}>

@@ -37,3 +37,27 @@
 .newsDesc {
   display: block;
 }
+
+.banner {
+  text-align: center;
+  background: #373277;
+  padding-bottom: 1.3rem;
+  width: 100vw;
+  margin-left: -20px;
+}
+
+.bannerTitle {
+  margin: 0;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1em;
+  color: white;
+}
+
+.bannerDesc {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25em;
+  margin: 0;
+}
