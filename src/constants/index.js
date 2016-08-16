@@ -1,1 +1,2 @@
 export const SET_RUNTIME_VARIABLE = 'SET_RUNTIME_VARIABLE';
+export const SET_NEWS_ITEM = 'SET_NEWS_ITEM';

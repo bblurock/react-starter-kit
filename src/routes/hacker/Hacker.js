@@ -12,6 +12,8 @@ import ReactFireMixin from 'reactfire'
 import firebase from 'firebase'
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Hacker.css';
+import { connect } from 'react-redux';
+import { setHackerNewsItem } from '../../actions/hacker'
 
 const title = 'Hacker News';
 
@@ -51,11 +53,9 @@ const HackerNews = React.createClass({
         const binding = ref.child(`item/${key}`);
 
         binding.on('value', snapshot => {
-          this.setState({
-            items: {
-              ...this.state.items,
-              [snapshot.getKey()]: snapshot.val(),
-            },
+          this.props.setHackerNewsItem({
+            id: snapshot.getKey(),
+            data: snapshot.val(),
           })
         });
       });
@@ -64,8 +64,9 @@ const HackerNews = React.createClass({
   },
 
   render: function () {
-    const { items } = this.state;
+    const { items } = this.props;
     this.context.setTitle(title);
+    console.log(items);
     return (
       <div className={s.root}>
         <div className={s.banner}>
@@ -84,4 +85,10 @@ const HackerNews = React.createClass({
 
 HackerNews.contextTypes = { setTitle: PropTypes.func.isRequired };
 
-export default withStyles(s)(HackerNews);
+const mapStatesToProps = state => ({
+  items: state.hacker
+})
+
+export default connect(mapStatesToProps, {
+  setHackerNewsItem
+})(withStyles(s)(HackerNews));
